@@ -1,6 +1,11 @@
 const router = require("express").Router();
 const pageModel = require("../model/pageModel");
 
+router.post("/login", async (req, res) => {
+  console.log(req.body);
+  res.send("body " + req.body.username);
+});
+
 router.get("/", async (req, res) => {
   getPageWithDefault(req, res);
 });
@@ -19,8 +24,9 @@ async function getPageWithDefault(req, res) {
   if (page[0] !== undefined) {
     res.render("pageView", { page: page[0], menu: menu });
   } else {
-    req.params.key = "home";
-    getPageWithDefault(req, res);
+    //res.statusMessage = "Page not available";
+    res.status(404);
+    res.render("statusView", { code: 404, status: "Not Found" });
   }
 }
 

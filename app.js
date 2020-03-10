@@ -8,6 +8,7 @@ const hbs = require("hbs");
 const app = express();
 const port = 2000;
 
+app.use(express.urlencoded({ extended: true }));
 hbs.registerPartials(path.join(__dirname, "/views/parts"));
 app.set("view engine", "hbs");
 app.use(cookieParser());
