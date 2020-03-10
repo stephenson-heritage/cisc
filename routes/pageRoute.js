@@ -7,9 +7,11 @@ router.get("/", (req, res) => {
 
 router.get("/:key", async (req, res) => {
   let page = await pageModel.getPage(req.params.key);
-  //console.log(page[0]);
+  let menu = await pageModel.getMenu();
+
+  //console.log(menu);
   if (page[0] !== undefined) {
-    res.send(page[0].content);
+    res.render("pageView", { page: page[0], menu: menu });
   } else {
     res.send(`<h1>${req.params.key} does not exist</h1>`);
   }
