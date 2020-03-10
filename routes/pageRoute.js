@@ -1,11 +1,17 @@
 const router = require("express").Router();
 const pageModel = require("../model/pageModel");
 
-router.get("/", (req, res) => {
-  res.send("<h1>home</h1>");
+router.get("/", async (req, res) => {
+  getPageWithDefault(req, res);
+});
+router.get("/:key", async (req, res) => {
+  getPageWithDefault(req, res);
 });
 
-router.get("/:key", async (req, res) => {
+async function getPageWithDefault(req, res) {
+  if (req.params.key === undefined) {
+    req.params.key = "home";
+  }
   let page = await pageModel.getPage(req.params.key);
   let menu = await pageModel.getMenu();
 
@@ -13,8 +19,9 @@ router.get("/:key", async (req, res) => {
   if (page[0] !== undefined) {
     res.render("pageView", { page: page[0], menu: menu });
   } else {
-    res.send(`<h1>${req.params.key} does not exist</h1>`);
+    req.params.key = "home";
+    getPageWithDefault(req, res);
   }
-});
+}
 
 module.exports = router;
