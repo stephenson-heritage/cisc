@@ -1,10 +1,10 @@
 const router = require("express").Router();
 const pageModel = require("../model/pageModel");
 
-router.post("/login", async (req, res) => {
-  console.log(req.body);
-  res.send("body " + req.body.username);
-});
+// router.post("/login", async (req, res) => {
+//   console.log(req.body);
+//   res.send("body " + req.body.username);
+// });
 
 router.get("/", async (req, res) => {
   getPageWithDefault(req, res);
