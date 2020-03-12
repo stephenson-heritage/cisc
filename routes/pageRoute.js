@@ -6,10 +6,10 @@ const pageModel = require("../model/pageModel");
 //   res.send("body " + req.body.username);
 // });
 
-router.get("/", async (req, res) => {
+router.all("/", async (req, res) => {
   getPageWithDefault(req, res);
 });
-router.get("/:key", async (req, res) => {
+router.all("/:key", async (req, res) => {
   getPageWithDefault(req, res);
 });
 
@@ -22,7 +22,11 @@ async function getPageWithDefault(req, res) {
 
   //console.log(menu);
   if (page[0] !== undefined) {
-    res.render("pageView", { page: page[0], menu: menu });
+    res.render("pageView", {
+      page: page[0],
+      menu: menu,
+      user: req.user
+    });
   } else {
     //res.statusMessage = "Page not available";
     res.status(404);

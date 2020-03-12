@@ -1,4 +1,7 @@
-<form action="/login" method="POST" enctype="application/x-www-form-urlencoded">
+{{#if auth}}
+    logout
+{{else}}
+<form action="" method="POST" enctype="application/x-www-form-urlencoded">
     <label for="username">Username:</label>
     <input id="username" type="text" name="username" />
     <label for="password">Password:</label>
@@ -6,3 +9,4 @@
 
     <input type="submit" value="login" />
 </form>
+{{/if}}
