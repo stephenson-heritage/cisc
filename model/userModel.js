@@ -42,7 +42,6 @@ module.exports = {
       .update(pwd)
       .digest("base64");
 
-    //console.log(`*${hash}*`);
     if (row[0] !== undefined) {
       if (hash === row[0].passHash) {
         // if the user is authenticated

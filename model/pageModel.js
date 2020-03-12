@@ -1,6 +1,28 @@
 const db = require("../config/db");
 
 module.exports = {
+  addPage: async function(
+    pageKey,
+    title,
+    content,
+    shownInMenu,
+    menuOrder
+  ) {
+    if (shownInMenu === undefined) {
+      shownInMenu = false;
+    }
+    if (menuOrder === undefined) {
+      menuOrder = 4;
+    }
+
+    let conn = await db.getConnection();
+    const result = await conn.query(
+      "INSERT INTO pages (`pageKey`, `title`, `content`,shownInMenu, menuOrder) VALUES (?, ?, ?, ?, ?);",
+      [pageKey, title, content, shownInMenu, menuOrder]
+    );
+    conn.end();
+    console.log(result);
+  },
   getPage: async function(key) {
     //key = tolowercase(trim(key));
     let conn = await db.getConnection();
