@@ -1,6 +1,6 @@
 const userModel = require("../model/userModel");
 module.exports = async (req, res, next) => {
-  //console.log(req.query.logout);
+  req.user = { auth: false };
   if (req.query.logout !== undefined) {
     res.clearCookie("user");
     res.clearCookie("chash");

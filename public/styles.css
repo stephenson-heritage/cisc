@@ -6,6 +6,19 @@ body {
     "Trebuchet MS", sans-serif;
 }
 
+#login label {
+  display: block;
+}
+
+code {
+  display: block;
+}
+
+#login input[type="text"],
+#login input[type="password"] {
+  width: 100px;
+}
+
 header {
   background-color: #fd0;
   font-size: 3em;
