@@ -1,36 +1,36 @@
 {
-  "name": "cisc",
-  "version": "0.7.1",
-  "description": "Cats in sports cars!",
-  "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npx nodemon app.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/stephenson-heritage/cisc.git"
-  },
-  "keywords": [
-    "cats",
-    "sportscars",
-    "tutorial"
-  ],
-  "author": "Heritage",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/stephenson-heritage/cisc/issues"
-  },
-  "homepage": "https://github.com/stephenson-heritage/cisc#readme",
-  "dependencies": {
-    "body-parser": "^1.19.0",
-    "cookie-parser": "^1.4.4",
-    "crypto": "^1.0.1",
-    "express": "^4.17.1",
-    "hbs": "^4.1.0",
-    "mariadb": "^2.2.0"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.2"
-  }
+    "name": "cisc",
+    "version": "0.7.1",
+    "description": "Cats in sports cars!",
+    "main": "app.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "npx nodemon app.js -e js,hbs"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/stephenson-heritage/cisc.git"
+    },
+    "keywords": [
+        "cats",
+        "sportscars",
+        "tutorial"
+    ],
+    "author": "Heritage",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/stephenson-heritage/cisc/issues"
+    },
+    "homepage": "https://github.com/stephenson-heritage/cisc#readme",
+    "dependencies": {
+        "body-parser": "^1.19.0",
+        "cookie-parser": "^1.4.4",
+        "crypto": "^1.0.1",
+        "express": "^4.17.1",
+        "hbs": "^4.1.0",
+        "mariadb": "^2.2.0"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.2"
+    }
 }
