@@ -27,10 +27,11 @@
         "cookie-parser": "^1.4.5",
         "crypto": "^1.0.1",
         "express": "^4.17.1",
-        "hbs": "^4.1.0",
-        "mariadb": "^2.2.0"
+        "hbs": "^4.1.1",
+        "mariadb": "^2.4.0",
+        "npm-check-updates": "^7.0.1"
     },
     "devDependencies": {
-        "nodemon": "^2.0.2"
+        "nodemon": "^2.0.4"
     }
 }
